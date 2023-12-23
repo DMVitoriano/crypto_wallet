@@ -3,8 +3,16 @@
 <%= render @coin %>
 
 <div>
+    <% if @coin.url_image.present? %>
+      <%= image_tag @coin.url_image, width: 25, height: 25 %>
+    <% else %>
+      <p>Imagem não disponível</p>
+    <% end %>
+  </div>
+
+<div>
   <%= link_to "Edite esta moeda", edit_coin_path(@coin) %> |
   <%= link_to "Voltar às moedas", coins_path %>
-
+  
   <%= button_to "Destrua esta moeda", @coin, method: :delete %>
 </div>

@@ -17,7 +17,13 @@
       <tr>
         <td><%= coin.description %></td>
         <td><%= coin.acronym %></td>        
-        <td><%= image_tag coin.url_image, width: 25, height: 25 %></td>
+        <td>
+          <% if coin.url_image.present? %>
+            <%= image_tag coin.url_image, width: 25, height: 25 %>
+          <% else %>
+            <p>Imagem não disponível</p>
+          <% end %>
+        </td>
         <td><%= link_to "Detalhes", coin %></td>
         <td><%= link_to "Editar", edit_coin_path(coin) %></td>
         <td><%= link_to "Apagar", coin, method: :delete, data: { confirm: "Tem certeza?" } %></td>
@@ -25,7 +31,7 @@
     <% end %>
   </tbody>  
 </table>  
-
+<%= link_to "Criar Moeda", new_coin_path %>
 
 <!-- <div id="coins">
   <% @coins.each do |coin| %>

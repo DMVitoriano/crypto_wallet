@@ -13,22 +13,26 @@
 
   <div class= "field">
     <div>
-      <%= form.label :description, style: "display: block" %>
+      <%= form.label "Nome", style: "display: block" %>
       <%= form.text_field :description %>
     </div>
 
     <div>
-      <%= form.label :acronym, style: "display: block" %>
+      <%= form.label "Sigla", style: "display: block" %>
       <%= form.text_field :acronym %>
     </div>
 
     <div>
-      <%= form.label :url_image, style: "display: block" %>
+      <%= form.label "Link da imagem", style: "display: block" %>
       <%= form.text_field :url_image %>    
     </div>
 
     <div>
-      <%= image_tag coin.url_image, width: 25, height: 25 %>
+      <% if coin.url_image.present? %>
+        <%= image_tag coin.url_image, width: 25, height: 25 %>
+      <% else %>
+        <p>Imagem não disponível</p>
+      <% end %>
     </div>
   </div>
 
