@@ -2,12 +2,11 @@
 
 <p><strong>Data: </strong><%= date_br(Date.today) %>
 
+<%= render "menu" %>
 
-<ul>   
-    <li>
-        <%= link_to "Todas Moedas", "/coins" %>
-    </li>
-</ul> 
+<p>
+    Você esta en um ambiente de <strong><%= Rails.env %></strong>
+</p>
 
 
 <!-- 
